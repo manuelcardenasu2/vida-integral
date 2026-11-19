@@ -1,0 +1,44 @@
+// Medidas DAX - Red Hospitalaria Vida Integral
+// Tablas importadas desde modelo_vida_integral.xlsx. Relaciones 1:* con filtro en una sola dirección.
+// dim_fecha marcada como tabla de fechas. Relación dim_municipios -> dim_hospitales inactiva.
+
+Total atenciones = COUNTROWS ( fact_atenciones )
+Pacientes unicos = DISTINCTCOUNT ( fact_atenciones[paciente_id] )
+Espera promedio = AVERAGE ( fact_atenciones[tiempo_espera_min] )            // ignora vacíos
+Tasa hospitalizacion = DIVIDE ( SUM ( fact_atenciones[es_hospitalizado] ), [Total atenciones] )
+Tasa reingreso = DIVIDE ( SUM ( fact_atenciones[reingreso_30_dias] ), [Total atenciones] )
+Costo promedio = AVERAGE ( fact_atenciones[costo_atencion_cop] )            // ignora vacíos
+Satisfaccion promedio = AVERAGE ( fact_atenciones[satisfaccion_1_a_5] )     // ignora vacíos
+Estancia promedio = AVERAGE ( fact_atenciones[estancia_dias] )
+
+Triage II en meta =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( fact_atenciones ), fact_atenciones[triage] = 2, fact_atenciones[tiempo_espera_min] <= 30 ),
+    CALCULATE ( COUNT ( fact_atenciones[tiempo_espera_min] ), fact_atenciones[triage] = 2 )
+)
+
+Pct espera mayor 120 =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( fact_atenciones ), fact_atenciones[tiempo_espera_min] > 120 ),
+    COUNT ( fact_atenciones[tiempo_espera_min] )
+)
+
+Pct insatisfechos =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( fact_atenciones ), fact_atenciones[satisfaccion_1_a_5] <= 3 ),
+    COUNT ( fact_atenciones[satisfaccion_1_a_5] )
+)
+
+Pct pacientes con reingreso =
+DIVIDE (
+    CALCULATE ( DISTINCTCOUNT ( fact_atenciones[paciente_id] ), fact_atenciones[reingreso_30_dias] = 1 ),
+    [Pacientes unicos]
+)
+
+// Comparación contra la red (quita el filtro de hospital)
+Espera red = CALCULATE ( [Espera promedio], REMOVEFILTERS ( dim_hospitales ) )
+Diferencia espera vs red = [Espera promedio] - [Espera red]
+Satisfaccion red = CALCULATE ( [Satisfaccion promedio], REMOVEFILTERS ( dim_hospitales ) )
+
+// Comprobación: debe ser igual a [Total atenciones] con cualquier filtro
+Suma por hospital = SUMX ( VALUES ( dim_hospitales[hospital_id] ), [Total atenciones] )

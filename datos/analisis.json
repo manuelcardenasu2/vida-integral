@@ -1,0 +1,934 @@
+{
+ "kpi": {
+  "atenciones": 6000,
+  "pacientes_unicos": 2930,
+  "espera_prom": 101.7,
+  "espera_mediana": 98.0,
+  "tasa_hosp": 24.6,
+  "tasa_reing": 8.15,
+  "costo_prom": 969236,
+  "costo_total": 5803785000.0,
+  "satisf_prom": 3.96,
+  "estancia_prom": 3.15,
+  "pct_espera_120": 32.8,
+  "pct_insatisfechos": 12.0
+ },
+ "tendencia": {
+  "tiempo_espera_min": {
+   "pendiente_mes": 0.030194647559269795,
+   "p": 0.7692853340759146
+  },
+  "satisfaccion_1_a_5": {
+   "pendiente_mes": 0.000622591686544703,
+   "p": 0.6854315314747352
+  },
+  "es_hospitalizado": {
+   "pendiente_mes": -0.0012414003847431938,
+   "p": 0.15973093386025042
+  },
+  "reingreso_30_dias": {
+   "pendiente_mes": 0.0005958855468937501,
+   "p": 0.28809782911984444
+  },
+  "costo_atencion_cop": {
+   "pendiente_mes": -568.8480419653706,
+   "p": 0.7009643805000813
+  },
+  "estancia_dias": {
+   "pendiente_mes": 0.0016940841443274554,
+   "p": 0.6310948761965691
+  }
+ },
+ "ene_oct_2025_vs_2026": [
+  {
+   "anio": 2025,
+   "atenciones": 2750,
+   "espera": 101.1781,
+   "hosp": 0.2524,
+   "reing": 0.0775,
+   "sat": 3.9581,
+   "costo": 976648.9245,
+   "estancia": 3.1391
+  },
+  {
+   "anio": 2026,
+   "atenciones": 2690,
+   "espera": 102.2769,
+   "hosp": 0.2416,
+   "reing": 0.0877,
+   "sat": 3.9709,
+   "costo": 965668.6523,
+   "estancia": 3.1662
+  }
+ ],
+ "p_ene_oct": {
+  "espera_mw": 0.6247861928775731,
+  "reing_chi2": 0.1841729025471816,
+  "hosp_chi2": 0.37572841562823656,
+  "sat_mw": 0.5191823773365335
+ },
+ "triage": {
+  "1": {
+   "n": 360,
+   "media": 39.9,
+   "mediana": 34.5,
+   "p25": 20.0,
+   "p75": 51.0,
+   "satisf": 4.45,
+   "hosp": 55.1,
+   "costo": 1455859
+  },
+  "2": {
+   "n": 962,
+   "media": 56.9,
+   "mediana": 51.5,
+   "p25": 33.25,
+   "p75": 73.0,
+   "satisf": 4.28,
+   "hosp": 55.4,
+   "costo": 1455191
+  },
+  "3": {
+   "n": 2311,
+   "media": 92.3,
+   "mediana": 87.0,
+   "p25": 71.0,
+   "p75": 107.0,
+   "satisf": 4.07,
+   "hosp": 15.3,
+   "costo": 821105
+  },
+  "4": {
+   "n": 1594,
+   "media": 127.5,
+   "mediana": 124.0,
+   "p25": 105.0,
+   "p75": 141.75,
+   "satisf": 3.75,
+   "hosp": 16.6,
+   "costo": 853022
+  },
+  "5": {
+   "n": 738,
+   "media": 163.6,
+   "mediana": 161.0,
+   "p25": 142.25,
+   "p75": 178.0,
+   "satisf": 3.4,
+   "hosp": 16.4,
+   "costo": 816668
+  }
+ },
+ "norma": {
+  "t1_mediana": 34.5,
+  "t1_pct_5min": 9.2,
+  "t1_pct_mas30": 57.5,
+  "t2_pct_en_meta": 21.4,
+  "t2_media": 56.9,
+  "t2_n": 962,
+  "t2_fuera_meta_n": 756,
+  "t2_fuera_meta_por_anio": 412,
+  "rho_triage_espera": 0.749,
+  "t2_urgencias_en_meta": 17.5
+ },
+ "t2_en_meta_por_hospital": {
+  "Central": 21.6,
+  "Norte": 30.4,
+  "Oriente": 17.3,
+  "Regional": 9.0,
+  "San Gabriel": 20.7,
+  "Sur": 29.5
+ },
+ "t1_mediana_por_hospital": {
+  "Central": 34.0,
+  "Norte": 30.0,
+  "Oriente": 41.0,
+  "Regional": 43.0,
+  "San Gabriel": 39.0,
+  "Sur": 30.0
+ },
+ "exceso_espera": [
+  {
+   "h": "Central",
+   "obs": 99.77,
+   "esp": 101.87,
+   "exceso": -2.09,
+   "se": 0.94,
+   "n": 1434,
+   "lo": -3.94,
+   "hi": -0.24
+  },
+  {
+   "h": "Norte",
+   "obs": 92.08,
+   "esp": 99.64,
+   "exceso": -7.56,
+   "se": 0.99,
+   "n": 1087,
+   "lo": -9.51,
+   "hi": -5.62
+  },
+  {
+   "h": "Oriente",
+   "obs": 108.54,
+   "esp": 101.74,
+   "exceso": 6.8,
+   "se": 1.19,
+   "n": 831,
+   "lo": 4.46,
+   "hi": 9.14
+  },
+  {
+   "h": "Regional",
+   "obs": 112.14,
+   "esp": 102.41,
+   "exceso": 9.73,
+   "se": 1.06,
+   "n": 984,
+   "lo": 7.66,
+   "hi": 11.8
+  },
+  {
+   "h": "San Gabriel",
+   "obs": 101.9,
+   "esp": 101.52,
+   "exceso": 0.37,
+   "se": 1.09,
+   "n": 987,
+   "lo": -1.76,
+   "hi": 2.51
+  },
+  {
+   "h": "Sur",
+   "obs": 96.77,
+   "esp": 103.56,
+   "exceso": -6.8,
+   "se": 1.3,
+   "n": 642,
+   "lo": -9.34,
+   "hi": -4.26
+  }
+ ],
+ "ols_espera": {
+  "r2": 0.535,
+  "coef": [
+   {
+    "index": "const",
+    "coef": 40.99,
+    "se": 2.067,
+    "p": 0.0
+   },
+   {
+    "index": "hospital_id[H02]",
+    "coef": -5.51,
+    "se": 1.375,
+    "p": 0.0
+   },
+   {
+    "index": "hospital_id[H03]",
+    "coef": 2.524,
+    "se": 1.414,
+    "p": 0.074
+   },
+   {
+    "index": "hospital_id[H04]",
+    "coef": 8.89,
+    "se": 1.491,
+    "p": 0.0
+   },
+   {
+    "index": "hospital_id[H05]",
+    "coef": 11.762,
+    "se": 1.415,
+    "p": 0.0
+   },
+   {
+    "index": "hospital_id[H06]",
+    "coef": -4.677,
+    "se": 1.624,
+    "p": 0.004
+   },
+   {
+    "index": "triage[2]",
+    "coef": 16.421,
+    "se": 2.112,
+    "p": 0.0
+   },
+   {
+    "index": "triage[3]",
+    "coef": 51.872,
+    "se": 1.937,
+    "p": 0.0
+   },
+   {
+    "index": "triage[4]",
+    "coef": 87.377,
+    "se": 1.995,
+    "p": 0.0
+   },
+   {
+    "index": "triage[5]",
+    "coef": 123.141,
+    "se": 2.198,
+    "p": 0.0
+   },
+   {
+    "index": "servicio_id[S02]",
+    "coef": -10.601,
+    "se": 1.248,
+    "p": 0.0
+   },
+   {
+    "index": "servicio_id[S03]",
+    "coef": 5.941,
+    "se": 1.427,
+    "p": 0.0
+   },
+   {
+    "index": "servicio_id[S04]",
+    "coef": -12.962,
+    "se": 1.783,
+    "p": 0.0
+   },
+   {
+    "index": "servicio_id[S05]",
+    "coef": 12.697,
+    "se": 1.761,
+    "p": 0.0
+   },
+   {
+    "index": "servicio_id[S06]",
+    "coef": -12.095,
+    "se": 1.868,
+    "p": 0.0
+   },
+   {
+    "index": "servicio_id[S07]",
+    "coef": -1.852,
+    "se": 1.794,
+    "p": 0.302
+   },
+   {
+    "index": "servicio_id[S08]",
+    "coef": -11.71,
+    "se": 2.454,
+    "p": 0.0
+   }
+  ]
+ },
+ "kw_espera_hosp_p": 1.556813303415387e-22,
+ "volumen_vs_exceso": {
+  "Central": 1445,
+  "Norte": 1091,
+  "Oriente": 838,
+  "Regional": 990,
+  "San Gabriel": 990,
+  "Sur": 646
+ },
+ "espera_hosp_triage": {
+  "1": {
+   "Central": 37.9,
+   "Norte": 33.4,
+   "Oriente": 50.0,
+   "Regional": 47.1,
+   "San Gabriel": 40.9,
+   "Sur": 31.6
+  },
+  "2": {
+   "Central": 56.4,
+   "Norte": 47.1,
+   "Oriente": 64.1,
+   "Regional": 68.0,
+   "San Gabriel": 58.2,
+   "Sur": 48.4
+  },
+  "3": {
+   "Central": 89.5,
+   "Norte": 84.2,
+   "Oriente": 97.9,
+   "Regional": 101.5,
+   "San Gabriel": 94.8,
+   "Sur": 86.5
+  },
+  "4": {
+   "Central": 125.2,
+   "Norte": 122.1,
+   "Oriente": 134.1,
+   "Regional": 136.3,
+   "San Gabriel": 124.6,
+   "Sur": 124.0
+  },
+  "5": {
+   "Central": 162.8,
+   "Norte": 154.3,
+   "Oriente": 171.7,
+   "Regional": 177.1,
+   "San Gabriel": 163.2,
+   "Sur": 149.9
+  }
+ },
+ "pct120_hosp": {
+  "Central": 31.5,
+  "Norte": 26.8,
+  "Oriente": 35.9,
+  "Regional": 41.4,
+  "San Gabriel": 31.3,
+  "Sur": 30.7
+ },
+ "hora": {
+  "p_hora": 0.48761819034270437
+ },
+ "fin_semana_p": 0.5832251668109905,
+ "franja": {
+  "Madrugada (0-5)": 102.1,
+  "Mañana (6-11)": 99.6,
+  "Noche (18-23)": 103.8,
+  "Tarde (12-17)": 101.1
+ },
+ "mix_triage_hosp": {
+  "Central": 22.4,
+  "Norte": 23.3,
+  "Oriente": 20.9,
+  "Regional": 21.1,
+  "San Gabriel": 22.8,
+  "Sur": 21.4
+ },
+ "rel_espera_sat": {
+  "spearman": -0.54,
+  "pearson": -0.568,
+  "por_triage": {
+   "1": -0.254,
+   "2": -0.418,
+   "3": -0.384,
+   "4": -0.398,
+   "5": -0.375
+  },
+  "coef_min_ajust_triage": -0.00864,
+  "coef_triage_p": {
+   "triage[2]": 0.7083010942307267,
+   "triage[3]": 0.02931696965200827,
+   "triage[4]": 0.1683457198070244,
+   "triage[5]": 0.6515118840460948
+  },
+  "r2_espera_triage": 0.325,
+  "r2_solo_triage": 0.156,
+  "r2_solo_espera": 0.322,
+  "insatisf_espera_le60": 1.2,
+  "insatisf_espera_gt120": 26.8
+ },
+ "sat_por_rango_espera": [
+  {
+   "wb": "0-30",
+   "size": 382,
+   "mean": 4.605
+  },
+  {
+   "wb": "31-60",
+   "size": 832,
+   "mean": 4.403
+  },
+  {
+   "wb": "61-90",
+   "size": 1394,
+   "mean": 4.211
+  },
+  {
+   "wb": "91-120",
+   "size": 1372,
+   "mean": 3.949
+  },
+  {
+   "wb": "121-150",
+   "size": 1021,
+   "mean": 3.668
+  },
+  {
+   "wb": "151-180",
+   "size": 570,
+   "mean": 3.43
+  },
+  {
+   "wb": "más de 180",
+   "size": 339,
+   "mean": 2.927
+  }
+ ],
+ "sat_por_resultado": {
+  "Alta": 3.94,
+  "Hospitalización": 4.12,
+  "Observación": 3.94,
+  "Remisión": 3.74,
+  "UCI": 3.6
+ },
+ "espera_por_resultado": {
+  "Alta": 107.2,
+  "Hospitalización": 85.7,
+  "Observación": 106.9,
+  "Remisión": 95.5,
+  "UCI": 84.2
+ },
+ "sat_hosp_bruta_p": {
+  "const": 0.0,
+  "hospital_id[H02]": 0.1947,
+  "hospital_id[H03]": 0.7496,
+  "hospital_id[H04]": 0.0443,
+  "hospital_id[H05]": 0.0004,
+  "hospital_id[H06]": 0.5513
+ },
+ "sat_hosp_ajustada_p": {
+  "const": 0.0,
+  "tiempo_espera_min": 0.0,
+  "hospital_id[H02]": 0.3382,
+  "hospital_id[H03]": 0.7359,
+  "hospital_id[H04]": 0.6932,
+  "hospital_id[H05]": 0.9585,
+  "hospital_id[H06]": 0.961
+ },
+ "kw_sat_hosp_p": 0.00016556725452935973,
+ "sat_hosp": [
+  {
+   "h": "Central",
+   "bruta": 3.979,
+   "ajustada_por_espera": 3.962
+  },
+  {
+   "h": "Norte",
+   "bruta": 4.018,
+   "ajustada_por_espera": 3.938
+  },
+  {
+   "h": "Oriente",
+   "bruta": 3.913,
+   "ajustada_por_espera": 3.973
+  },
+  {
+   "h": "Regional",
+   "bruta": 3.873,
+   "ajustada_por_espera": 3.961
+  },
+  {
+   "h": "San Gabriel",
+   "bruta": 3.969,
+   "ajustada_por_espera": 3.971
+  },
+  {
+   "h": "Sur",
+   "bruta": 4.002,
+   "ajustada_por_espera": 3.96
+  }
+ ],
+ "p_hospital": {
+  "estancia_dias": 0.8625743378223908,
+  "costo_atencion_cop": 0.8163727714418255,
+  "satisfaccion_1_a_5": 0.00016556725452935973,
+  "tiempo_espera_min": 1.556813303415387e-22,
+  "es_hospitalizado": 0.5121324933618336,
+  "reingreso_30_dias": 0.12006040112853789
+ },
+ "r2_costo": {
+  "hospital": 0.0005,
+  "estancia": 0.564,
+  "servicio": 0.768,
+  "servicio_estancia": 0.969,
+  "servicio_estancia_hospital": 0.97
+ },
+ "costo_por_dia_ajustado": 218839,
+ "rho_costo_estancia": 0.901,
+ "costo_hosp_vs_no": {
+  "costo": {
+   "0": 894167.55,
+   "1": 1198713.41
+  },
+  "estancia": {
+   "0": 2.86,
+   "1": 4.04
+  }
+ },
+ "servicios": [
+  {
+   "servicio": "Cirugía",
+   "n": 472,
+   "costo": 1960055.202,
+   "total": 923186000.0,
+   "estancia": 4.593,
+   "espera": 118.525,
+   "sat": 3.811,
+   "hosp": 0.275,
+   "reing": 0.095,
+   "pct_costo": 15.907
+  },
+  {
+   "servicio": "Ginecología",
+   "n": 407,
+   "costo": 692707.617,
+   "total": 281932000.0,
+   "estancia": 2.804,
+   "espera": 91.623,
+   "sat": 4.047,
+   "hosp": 0.265,
+   "reing": 0.103,
+   "pct_costo": 4.858
+  },
+  {
+   "servicio": "Medicina general",
+   "n": 1238,
+   "costo": 600759.095,
+   "total": 743139000.0,
+   "estancia": 2.613,
+   "espera": 94.323,
+   "sat": 4.024,
+   "hosp": 0.246,
+   "reing": 0.076,
+   "pct_costo": 12.804
+  },
+  {
+   "servicio": "Medicina interna",
+   "n": 824,
+   "costo": 1400470.803,
+   "total": 1151187000.0,
+   "estancia": 4.719,
+   "espera": 108.604,
+   "sat": 3.927,
+   "hosp": 0.256,
+   "reing": 0.085,
+   "pct_costo": 19.835
+  },
+  {
+   "servicio": "Ortopedia",
+   "n": 449,
+   "costo": 735196.868,
+   "total": 328633000.0,
+   "estancia": 2.667,
+   "espera": 100.366,
+   "sat": 3.927,
+   "hosp": 0.229,
+   "reing": 0.071,
+   "pct_costo": 5.662
+  },
+  {
+   "servicio": "Pediatría",
+   "n": 457,
+   "costo": 620052.632,
+   "total": 282744000.0,
+   "estancia": 2.633,
+   "espera": 92.38,
+   "sat": 4.044,
+   "hosp": 0.252,
+   "reing": 0.083,
+   "pct_costo": 4.872
+  },
+  {
+   "servicio": "UCI",
+   "n": 221,
+   "costo": 3442837.104,
+   "total": 760867000.0,
+   "estancia": 4.591,
+   "espera": 95.944,
+   "sat": 3.998,
+   "hosp": 0.222,
+   "reing": 0.113,
+   "pct_costo": 13.11
+  },
+  {
+   "servicio": "Urgencias",
+   "n": 1932,
+   "costo": 691280.228,
+   "total": 1332097000.0,
+   "estancia": 2.62,
+   "espera": 104.548,
+   "sat": 3.932,
+   "hosp": 0.236,
+   "reing": 0.074,
+   "pct_costo": 22.952
+  }
+ ],
+ "hospitales": [
+  {
+   "h": "Central",
+   "n": 1445,
+   "pac": 1182,
+   "espera": 99.7713,
+   "sat": 3.9786,
+   "hosp": 0.2346,
+   "reing": 0.0817,
+   "costo": 993918.1692,
+   "estancia": 3.1819
+  },
+  {
+   "h": "Norte",
+   "n": 1091,
+   "pac": 960,
+   "espera": 92.0791,
+   "sat": 4.0175,
+   "hosp": 0.2566,
+   "reing": 0.0862,
+   "costo": 952862.1324,
+   "estancia": 3.1313
+  },
+  {
+   "h": "Oriente",
+   "n": 838,
+   "pac": 763,
+   "espera": 108.5415,
+   "sat": 3.9133,
+   "hosp": 0.2291,
+   "reing": 0.0788,
+   "costo": 963943.7799,
+   "estancia": 3.1476
+  },
+  {
+   "h": "Regional",
+   "n": 990,
+   "pac": 864,
+   "espera": 112.1352,
+   "sat": 3.8696,
+   "hosp": 0.2596,
+   "reing": 0.0929,
+   "costo": 974943.3771,
+   "estancia": 3.1779
+  },
+  {
+   "h": "San Gabriel",
+   "n": 990,
+   "pac": 870,
+   "espera": 101.8967,
+   "sat": 3.9687,
+   "hosp": 0.2455,
+   "reing": 0.0606,
+   "costo": 963494.4388,
+   "estancia": 3.1199
+  },
+  {
+   "h": "Sur",
+   "n": 646,
+   "pac": 590,
+   "espera": 96.7664,
+   "sat": 3.9997,
+   "hosp": 0.2554,
+   "reing": 0.0913,
+   "costo": 948554.3478,
+   "estancia": 3.1327
+  }
+ ],
+ "ejemplo_pdf_espera_baja_estancia_alta": {
+  "estancia_por_hospital": {
+   "Central": 3.18,
+   "Norte": 3.13,
+   "Oriente": 3.15,
+   "Regional": 3.18,
+   "San Gabriel": 3.12,
+   "Sur": 3.13
+  },
+  "p": 0.8625743378223908
+ },
+ "reing_cron_edad": [
+  {
+   "cron": "Crónica",
+   "e60": "60 años o más",
+   "n": 462,
+   "reing": 0.2208,
+   "r_n": 102
+  },
+  {
+   "cron": "Crónica",
+   "e60": "Menos de 60",
+   "n": 1682,
+   "reing": 0.1421,
+   "r_n": 239
+  },
+  {
+   "cron": "No crónica",
+   "e60": "60 años o más",
+   "n": 833,
+   "reing": 0.0768,
+   "r_n": 64
+  },
+  {
+   "cron": "No crónica",
+   "e60": "Menos de 60",
+   "n": 3023,
+   "reing": 0.0278,
+   "r_n": 84
+  }
+ ],
+ "reing_curso": {
+  "Aguda": 0.0373,
+  "Crónica": 0.159,
+  "Preventiva": 0.0474
+ },
+ "reing_diag": {
+  "Enfermedad gastrointestinal": 0.034,
+  "Traumatismos": 0.0358,
+  "Dolor musculoesquelético": 0.0384,
+  "Infecciones respiratorias": 0.0396,
+  "Complicaciones del embarazo": 0.0401,
+  "Control preventivo": 0.0474,
+  "Hipertensión": 0.142,
+  "Enfermedad renal": 0.162,
+  "Diabetes": 0.163,
+  "Enfermedad cardiovascular": 0.1746
+ },
+ "reing_grupo_edad": {
+  "0-17": 0.0666,
+  "18-29": 0.0547,
+  "30-44": 0.0727,
+  "45-59": 0.0743,
+  "60+": 0.1282
+ },
+ "reing_regimen": {
+  "Contributivo": 0.0794,
+  "Régimen especial": 0.0821,
+  "Subsidiado": 0.0837
+ },
+ "reing_sexo": {
+  "Femenino": 0.0803,
+  "Masculino": 0.0829
+ },
+ "p_reing": {
+  "curso": 4.982729701550392e-59,
+  "grupo_edad": 1.7960431007451628e-10,
+  "regimen": 0.8431689414703765,
+  "sexo": 0.7475821662820188,
+  "hospital_id": 0.12006040112853789,
+  "triage": 0.3019688881506837,
+  "servicio_id": 0.22176398841916856
+ },
+ "lpm_reing": {
+  "cronico_pp": 12.0,
+  "mayor60_pp": 6.0,
+  "p_cr": 2.8498789678529027e-61,
+  "p_60": 1.2609814848061036e-12
+ },
+ "cronicos": {
+  "pct_atenciones": 35.7,
+  "reingresos_cronicos": 341,
+  "reingresos_total": 489,
+  "pct_reingresos": 69.7,
+  "pct_costo": 41.3,
+  "costo_prom_reingreso": 1153454,
+  "costo_prom_no_reingreso": 952854,
+  "reing_cronicos_por_anio": 186
+ },
+ "estancia_cronico_extra_dias": 1.29,
+ "estancia_curso": {
+  "Aguda": 2.69,
+  "Crónica": 3.99,
+  "Preventiva": 2.64
+ },
+ "kw_estancia_diag_p": 2.108688776357679e-168,
+ "rho_edad_reing": 0.079,
+ "estancia_servicio_curso": {
+  "Aguda": {
+   "Cirugía": 4.14,
+   "Ginecología": 2.21,
+   "Medicina general": 2.17,
+   "Medicina interna": 4.23,
+   "Ortopedia": 2.34,
+   "Pediatría": 2.19,
+   "UCI": 4.15,
+   "Urgencias": 2.14
+  },
+  "Crónica": {
+   "Cirugía": 5.48,
+   "Ginecología": 3.61,
+   "Medicina general": 3.43,
+   "Medicina interna": 5.61,
+   "Ortopedia": 3.41,
+   "Pediatría": 3.32,
+   "UCI": 5.29,
+   "Urgencias": 3.53
+  },
+  "Preventiva": {
+   "Cirugía": 4.07,
+   "Ginecología": 2.41,
+   "Medicina general": 2.12,
+   "Medicina interna": 4.35,
+   "Ortopedia": 2.03,
+   "Pediatría": 2.11,
+   "UCI": 4.06,
+   "Urgencias": 2.02
+  }
+ },
+ "spearman": {
+  "tiempo_espera_min": {
+   "tiempo_espera_min": 1.0,
+   "satisfaccion_1_a_5": -0.54,
+   "estancia_dias": -0.249,
+   "costo_atencion_cop": -0.192,
+   "triage": 0.749,
+   "edad": 0.008,
+   "reingreso_30_dias": -0.001,
+   "es_hospitalizado": -0.21
+  },
+  "satisfaccion_1_a_5": {
+   "tiempo_espera_min": -0.54,
+   "satisfaccion_1_a_5": 1.0,
+   "estancia_dias": 0.121,
+   "costo_atencion_cop": 0.092,
+   "triage": -0.391,
+   "edad": -0.006,
+   "reingreso_30_dias": -0.005,
+   "es_hospitalizado": 0.084
+  },
+  "estancia_dias": {
+   "tiempo_espera_min": -0.249,
+   "satisfaccion_1_a_5": 0.121,
+   "estancia_dias": 1.0,
+   "costo_atencion_cop": 0.901,
+   "triage": -0.391,
+   "edad": 0.077,
+   "reingreso_30_dias": 0.127,
+   "es_hospitalizado": 0.287
+  },
+  "costo_atencion_cop": {
+   "tiempo_espera_min": -0.192,
+   "satisfaccion_1_a_5": 0.092,
+   "estancia_dias": 0.901,
+   "costo_atencion_cop": 1.0,
+   "triage": -0.348,
+   "edad": 0.042,
+   "reingreso_30_dias": 0.093,
+   "es_hospitalizado": 0.239
+  },
+  "triage": {
+   "tiempo_espera_min": 0.749,
+   "satisfaccion_1_a_5": -0.391,
+   "estancia_dias": -0.391,
+   "costo_atencion_cop": -0.348,
+   "triage": 1.0,
+   "edad": 0.012,
+   "reingreso_30_dias": -0.026,
+   "es_hospitalizado": -0.277
+  },
+  "edad": {
+   "tiempo_espera_min": 0.008,
+   "satisfaccion_1_a_5": -0.006,
+   "estancia_dias": 0.077,
+   "costo_atencion_cop": 0.042,
+   "triage": 0.012,
+   "edad": 1.0,
+   "reingreso_30_dias": 0.079,
+   "es_hospitalizado": 0.046
+  },
+  "reingreso_30_dias": {
+   "tiempo_espera_min": -0.001,
+   "satisfaccion_1_a_5": -0.005,
+   "estancia_dias": 0.127,
+   "costo_atencion_cop": 0.093,
+   "triage": -0.026,
+   "edad": 0.079,
+   "reingreso_30_dias": 1.0,
+   "es_hospitalizado": 0.065
+  },
+  "es_hospitalizado": {
+   "tiempo_espera_min": -0.21,
+   "satisfaccion_1_a_5": 0.084,
+   "estancia_dias": 0.287,
+   "costo_atencion_cop": 0.239,
+   "triage": -0.277,
+   "edad": 0.046,
+   "reingreso_30_dias": 0.065,
+   "es_hospitalizado": 1.0
+  }
+ }
+}

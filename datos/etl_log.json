@@ -1,0 +1,282 @@
+{
+ "calidad": {
+  "csv_vs_excel_celdas_distintas": 0,
+  "pk_duplicadas": {
+   "fact_atenciones": 0,
+   "dim_pacientes": 0,
+   "dim_hospitales": 0,
+   "dim_servicios": 0,
+   "dim_diagnosticos": 0,
+   "dim_municipios": 0,
+   "dim_aseguradoras": 0
+  },
+  "pk_nulas": {
+   "fact_atenciones": 0,
+   "dim_pacientes": 0,
+   "dim_hospitales": 0,
+   "dim_servicios": 0,
+   "dim_diagnosticos": 0,
+   "dim_municipios": 0,
+   "dim_aseguradoras": 0
+  },
+  "fk_huerfanas": {
+   "paciente_id": 0,
+   "hospital_id": 0,
+   "servicio_id": 0,
+   "diagnostico_id": 0,
+   "pacientes.municipio_id": 0,
+   "pacientes.aseguradora_id": 0
+  },
+  "dup_filas_completas": 0,
+  "dup_sin_id": 0,
+  "dup_paciente_fechahora": 0,
+  "pares_mismo_paciente_mismo_dia": 9,
+  "mismo_dia_distinto_hospital": 9,
+  "faltantes": {
+   "tiempo_espera_min": 35,
+   "costo_atencion_cop": 12,
+   "satisfaccion_1_a_5": 55
+  },
+  "faltantes_pct": {
+   "tiempo_espera_min": 0.58,
+   "costo_atencion_cop": 0.2,
+   "satisfaccion_1_a_5": 0.92
+  },
+  "filas_con_algun_faltante": 101,
+  "sensibilidad_imputacion": {
+   "tiempo_espera_min": {
+    "promedio_sin_imputar": 101.659,
+    "promedio_imputado": 101.695
+   },
+   "costo_atencion_cop": {
+    "promedio_sin_imputar": 969235.972,
+    "promedio_imputado": 968716.917
+   },
+   "satisfaccion_1_a_5": {
+    "promedio_sin_imputar": 3.959,
+    "promedio_imputado": 3.959
+   }
+  },
+  "rangos": {
+   "tiempo_espera_min": {
+    "min": 0.0,
+    "max": 341.0
+   },
+   "estancia_dias": {
+    "min": 0.4,
+    "max": 11.8
+   },
+   "costo_atencion_cop": {
+    "min": 45000.0,
+    "max": 4741000.0
+   },
+   "satisfaccion_1_a_5": {
+    "min": 1.0,
+    "max": 5.0
+   },
+   "triage": {
+    "min": 1.0,
+    "max": 5.0
+   }
+  },
+  "atipicos_iqr": {
+   "tiempo_espera_min": {
+    "limite_superior_iqr": 232.0,
+    "n_sobre_limite": 90
+   },
+   "estancia_dias": {
+    "limite_superior_iqr": 7.862499999999999,
+    "n_sobre_limite": 53
+   },
+   "costo_atencion_cop": {
+    "limite_superior_iqr": 2429500.0,
+    "n_sobre_limite": 289
+   }
+  },
+  "fecha_vs_fechahora": 0,
+  "mes_vs_fechahora": 0,
+  "dia_vs_fechahora": 0,
+  "resultado_vs_hospitalizado": {
+   "Alta": {
+    "0": 3703,
+    "1": 0
+   },
+   "Hospitalizacion": {
+    "0": 0,
+    "1": 1211
+   },
+   "Observacion": {
+    "0": 580,
+    "1": 0
+   },
+   "Remision": {
+    "0": 241,
+    "1": 159
+   },
+   "UCI": {
+    "0": 0,
+    "1": 106
+   }
+  },
+  "grupo_edad_inconsistente": 0,
+  "inconsistencias_clinicas": {
+   "embarazo_en_hombres": 157,
+   "ginecologia_en_hombres": 190,
+   "pediatria_mayores_17": 396,
+   "embarazo_edad_menor_12_o_mayor_55": 115
+  },
+  "filas_con_inconsistencia_clinica": 785,
+  "reingreso_validacion": {
+   "marcados_reingreso": 489,
+   "marcados_con_atencion_siguiente_30d": 31,
+   "marcados_con_atencion_anterior_30d": 37,
+   "no_marcados_con_atencion_siguiente_30d": 370
+  },
+  "hospitales_sin_municipio_id": 0,
+  "pacientes_dim": 3600,
+  "pacientes_con_atencion": 2930,
+  "pacientes_sin_atencion": 670
+ },
+ "bitacora": [
+  {
+   "orden": 1,
+   "tabla": "todas",
+   "accion": "Lectura",
+   "detalle": "Se leyeron 9 hojas del Excel y el CSV de la tabla principal",
+   "registros_afectados": null
+  },
+  {
+   "orden": 2,
+   "tabla": "fact_atenciones",
+   "accion": "Comparación de fuentes",
+   "detalle": "El CSV y la hoja fact_atenciones tienen 6000 y 6000 filas y 0 celdas distintas. Se trabaja con la hoja del Excel porque trae tipos de dato (fecha-hora) ya reconocidos.",
+   "registros_afectados": null
+  },
+  {
+   "orden": 3,
+   "tabla": "todas",
+   "accion": "Recorte de espacios",
+   "detalle": "Se quitaron espacios al inicio y al final de todos los campos de texto (no se encontró ninguno con espacios)",
+   "registros_afectados": null
+  },
+  {
+   "orden": 4,
+   "tabla": "todas",
+   "accion": "Validación de claves primarias",
+   "detalle": "Ninguna clave primaria está repetida ni vacía: {\"fact_atenciones\": 0, \"dim_pacientes\": 0, \"dim_hospitales\": 0, \"dim_servicios\": 0, \"dim_diagnosticos\": 0, \"dim_municipios\": 0, \"dim_aseguradoras\": 0}",
+   "registros_afectados": null
+  },
+  {
+   "orden": 5,
+   "tabla": "fact_atenciones",
+   "accion": "Integridad referencial",
+   "detalle": "Todas las claves foráneas encuentran su registro en la dimensión: {\"paciente_id\": 0, \"hospital_id\": 0, \"servicio_id\": 0, \"diagnostico_id\": 0, \"pacientes.municipio_id\": 0, \"pacientes.aseguradora_id\": 0}",
+   "registros_afectados": null
+  },
+  {
+   "orden": 6,
+   "tabla": "fact_atenciones",
+   "accion": "Detección de duplicados",
+   "detalle": "0 filas idénticas, 0 repetidas al ignorar atencion_id y 0 con el mismo paciente y la misma fecha-hora. Hay 9 pares de atenciones del mismo paciente el mismo día, todas en hospitales distintos, a horas distintas y con servicio o diagnóstico distinto. Se interpretan como atenciones reales (por ejemplo, una remisión) y se conservan con la bandera flag_mismo_dia.",
+   "registros_afectados": 18
+  },
+  {
+   "orden": 7,
+   "tabla": "fact_atenciones",
+   "accion": "Tratamiento de faltantes",
+   "detalle": "Faltan 35 tiempos de espera (0,58 %), 12 costos (0,20 %) y 55 satisfacciones (0,92 %). Están repartidos entre los 6 hospitales y los dos años, y solo una fila tiene dos faltantes. No se imputan: cada indicador excluye del numerador y del denominador las filas sin dato. Se probó imputar con la mediana del triage y los promedios casi no cambian (ver hoja calidad_datos). Se agregan las banderas falta_tiempo, falta_costo y falta_satisfaccion para poder contarlos en el tablero.",
+   "registros_afectados": 101
+  },
+  {
+   "orden": 8,
+   "tabla": "fact_atenciones",
+   "accion": "Rangos y atípicos",
+   "detalle": "No hay negativos, el triage está entre 1 y 5 y la satisfacción entre 1 y 5. Los valores altos por la regla del rango intercuartílico son plausibles (espera máxima 341 min, estancia máxima 11,8 días, costo máximo 4,7 millones en UCI y cirugía). Se conservan porque describen casos reales de la operación y borrarlos bajaría artificialmente los promedios.",
+   "registros_afectados": null
+  },
+  {
+   "orden": 9,
+   "tabla": "fact_atenciones",
+   "accion": "Consistencia de campos derivados",
+   "detalle": "fecha, mes y dia_semana coinciden con fecha_hora_ingreso en las 6.000 filas. es_hospitalizado es coherente con el resultado: vale 1 en todas las hospitalizaciones y UCI y 0 en todas las altas y observaciones. Las remisiones tienen ambos valores (241 sin hospitalizar y 159 hospitalizadas), lo que es posible porque un paciente puede remitirse después de estar internado.",
+   "registros_afectados": null
+  },
+  {
+   "orden": 10,
+   "tabla": "fact_atenciones",
+   "accion": "Consistencia clínica",
+   "detalle": "Al cruzar con dim_pacientes aparecen combinaciones imposibles: 157 complicaciones del embarazo en hombres, 190 atenciones de ginecología en hombres, 396 atenciones de pediatría en mayores de 17 años y 115 complicaciones del embarazo en menores de 12 o mayores de 55. Se marcan con flag_inconsistencia_clinica y no se borran, porque los tiempos, costos y resultados de esas atenciones siguen siendo válidos para los indicadores operativos. Por esta razón no se sacan conclusiones que crucen sexo o edad con servicio o diagnóstico.",
+   "registros_afectados": 785
+  },
+  {
+   "orden": 11,
+   "tabla": "fact_atenciones",
+   "accion": "Validación del reingreso",
+   "detalle": "Se comparó reingreso_30_dias con las fechas reales de cada paciente en la red. De 489 atenciones marcadas, solo 31 tienen otra atención en los 30 días siguientes y 37 en los 30 días anteriores; 370 atenciones sin marca sí tienen regreso en 30 días. El campo no se puede reconstruir con los registros, así que se usa tal como viene (es el dato oficial) y se reporta como limitación. Se agrega regresa_red_30d, calculado con fechas, solo como referencia.",
+   "registros_afectados": null
+  },
+  {
+   "orden": 12,
+   "tabla": "fact_atenciones",
+   "accion": "Homologación",
+   "detalle": "dia_semana pasó de inglés a español (Monday a Lunes) y se agregó dia_semana_num para ordenar",
+   "registros_afectados": 6000
+  },
+  {
+   "orden": 13,
+   "tabla": "fact_atenciones",
+   "accion": "Homologación",
+   "detalle": "resultado_atencion con tildes: Hospitalizacion, Observacion y Remision",
+   "registros_afectados": 2191
+  },
+  {
+   "orden": 14,
+   "tabla": "dimensiones",
+   "accion": "Homologación",
+   "detalle": "Tildes en nombres de servicios, diagnósticos, hospitales, municipios y regímenes (Pediatria a Pediatría, Giron a Girón, etc.)",
+   "registros_afectados": null
+  },
+  {
+   "orden": 15,
+   "tabla": "dim_hospitales",
+   "accion": "Homologación de clave",
+   "detalle": "El municipio venía como texto y con una grafía distinta a dim_municipios (Girón y Giron). Después de homologar se agregó municipio_id para que el hospital y el paciente usen el mismo código de municipio",
+   "registros_afectados": 6
+  },
+  {
+   "orden": 16,
+   "tabla": "dim_pacientes",
+   "accion": "Homologación",
+   "detalle": "sexo de F/M a Femenino/Masculino para que el tablero sea legible",
+   "registros_afectados": 3600
+  },
+  {
+   "orden": 17,
+   "tabla": "fact_atenciones",
+   "accion": "Columnas derivadas",
+   "detalle": "anio, mes_num, trimestre, hora, franja horaria, triage_ii_en_meta (1 si un triage II esperó 30 min o menos) y espera_mayor_120",
+   "registros_afectados": 6000
+  },
+  {
+   "orden": 18,
+   "tabla": "dim_fecha",
+   "accion": "Creación",
+   "detalle": "Calendario continuo de 669 días (2025-01-01 a 2026-10-31) para filtrar por periodo sin huecos",
+   "registros_afectados": null
+  },
+  {
+   "orden": 19,
+   "tabla": "dim_triage",
+   "accion": "Creación",
+   "detalle": "Tabla de los 5 niveles con la descripción y los tiempos de la Resolución 5596 de 2015 (I inmediata, II hasta 30 minutos)",
+   "registros_afectados": null
+  },
+  {
+   "orden": 20,
+   "tabla": "dim_pacientes",
+   "accion": "Revisión de cobertura",
+   "detalle": "dim_pacientes tiene 3600 pacientes, pero solo 2930 aparecen en fact_atenciones. Los 670 restantes se conservan en la dimensión (no estorban) pero no cuentan como pacientes atendidos.",
+   "registros_afectados": null
+  }
+ ]
+}
