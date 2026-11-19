@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cumplimiento del enunciado · Red Hospitalaria Vida Integral</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="index.html">Vida <span>Integral</span></a>
+  <div class="links">
+    <a href="index.html">Inicio</a>
+    <a href="tablero.html">Tablero</a>
+    <a href="presentacion.html">Presentación</a>
+    <a href="documento_tecnico.pdf">Documento</a>
+    <a href="decisiones.html">Decisiones</a>
+    <a class="on" href="cumplimiento.html">Cumplimiento</a>
+    <a href="figuras.html">Figuras</a>
+    <a href="anexos.html">Anexos</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Cruce con el enunciado</p>
+    <h1>Cumplimiento del enunciado</h1>
+    <p class="lead">Cada requisito del proyecto integrador y dónde está su evidencia: el documento técnico, el tablero, la presentación o los anexos.</p>
+  </div>
+
+  <section class="block">
+    <h2>Mínimos de la narrativa (Fase 3)</h2>
+    <div class="tablewrap"><table>
+      <tr><th>Exigencia</th><th class="num">Mínimo</th><th class="num">Entregado</th><th>Evidencia</th></tr>
+      <tr><td>Hallazgos sustentados</td><td class="num">3</td><td class="num">6</td><td><a href="presentacion.html#7">Diapositivas 7 a 12</a></td></tr>
+      <tr><td>Hallazgo contraintuitivo</td><td class="num">1</td><td class="num">3</td><td>Sin deterioro (<a href="presentacion.html#5">5</a>), menos graves más insatisfechos (<a href="presentacion.html#10">10</a>), costo independiente del hospital (<a href="presentacion.html#11">11</a>)</td></tr>
+      <tr><td>Relaciones entre variables</td><td class="num">4</td><td class="num">6</td><td>Triage y espera, espera y satisfacción, diagnóstico y estancia, estancia y costo, perfil y reingreso, hospital y resultados (<a href="presentacion.html#13">13</a> y documento, Momento 5)</td></tr>
+      <tr><td>Comparaciones</td><td class="num">3</td><td class="num">4</td><td>2025 contra 2026, hospitales, servicios y niveles de triage (documento, Momento 3)</td></tr>
+      <tr><td>Visualizaciones como evidencia</td><td class="num">6</td><td class="num">12</td><td><a href="figuras.html">Figuras</a> y <a href="tablero.html">tablero</a></td></tr>
+      <tr><td>Recomendaciones</td><td class="num">3</td><td class="num">4</td><td><a href="presentacion.html#15">Diapositiva 15</a> y <a href="decisiones.html">decisiones</a></td></tr>
+      <tr><td>Indicador de seguimiento por recomendación</td><td class="num">sí</td><td class="num">8</td><td><a href="presentacion.html#16">Diapositiva 16</a></td></tr>
+      <tr><td>Limitaciones reconocidas</td><td class="num">2</td><td class="num">8</td><td><a href="presentacion.html#17">Diapositiva 17</a> y documento, Limitaciones</td></tr>
+    </table></div>
+  </section>
+
+  <section class="block">
+    <h2>Los ocho momentos</h2>
+    <div class="tablewrap"><table>
+      <tr><th>Momento</th><th>Diapositivas</th><th>Contenido</th></tr>
+      <tr><td>1. El contexto</td><td><a href="presentacion.html#1">1 y 2</a></td><td>La red, sus seis hospitales y las seis preocupaciones de la dirección contrastadas con los datos</td></tr>
+      <tr><td>2. El problema</td><td><a href="presentacion.html#3">3</a></td><td>Pregunta propia y por qué se eligió</td></tr>
+      <tr><td>3. La evidencia</td><td><a href="presentacion.html#4">4 a 6</a></td><td>Atenciones contra pacientes, estabilidad en el tiempo y diferencias entre hospitales</td></tr>
+      <tr><td>4. El descubrimiento</td><td><a href="presentacion.html#7">7 a 12</a></td><td>Seis hallazgos, tres contraintuitivos</td></tr>
+      <tr><td>5. La conexión</td><td><a href="presentacion.html#13">13</a></td><td>Cadenas de relaciones, separando asociación de causa</td></tr>
+      <tr><td>6. La interpretación</td><td><a href="presentacion.html#14">14</a></td><td>Explicaciones descartadas con datos, hipótesis abiertas y el dato que falta</td></tr>
+      <tr><td>7. La decisión</td><td><a href="presentacion.html#15">15 y 16</a></td><td>Cuatro decisiones con problema, evidencia, acción, resultado e indicador</td></tr>
+      <tr><td>8. El cierre</td><td><a href="presentacion.html#18">18</a></td><td>Riesgo principal y qué pasa si no se decide</td></tr>
+    </table></div>
+  </section>
+
+  <section class="block">
+    <h2>Fase 1. Modelo de datos</h2>
+    <div class="tablewrap"><table>
+      <tr><th>Actividad del enunciado</th><th>Resultado</th><th></th></tr>
+      <tr><td>Tablas de hechos y dimensiones</td><td>fact_atenciones y ocho dimensiones, dos de ellas creadas (fecha y triage)</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Granularidad de cada tabla</td><td>Una fila por atención en el hecho; una por paciente, hospital, servicio, etc. en las dimensiones</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Claves primarias y foráneas</td><td>Sin claves repetidas ni huérfanas</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Relaciones y cardinalidades</td><td>Todas uno a muchos, con filtro en una dirección</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Relaciones muchos a muchos</td><td>Pacientes con hospitales, servicios y diagnósticos, resueltas por el hecho (1.600 pacientes en más de un hospital)</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Duplicados y faltantes</td><td>0 duplicados; faltantes por debajo del 1 %, excluidos de los promedios sin imputar</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Homologación de campos y formatos</td><td>Días en español, tildes, sexo y municipios con una sola clave</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Justificación de las transformaciones</td><td>Bitácora de 20 pasos dentro del modelo en Excel</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Modelo lógico y físico</td><td><a href="datos/modelo_vida_integral.xlsx">modelo_vida_integral.xlsx</a> y diagrama en el documento</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Reto: pacientes únicos</td><td>6.000 atenciones son 2.930 pacientes</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Reto: relación que duplica valores</td><td>Tres uniones incorrectas medidas: el costo se infla 23 %, 92 % y 164 %</td><td class="ok">Cumplido</td></tr>
+    </table></div>
+  </section>
+
+  <section class="block">
+    <h2>Fase 2. Dashboard</h2>
+    <div class="tablewrap"><table>
+      <tr><th>Requisito</th><th>Resultado</th><th></th></tr>
+      <tr><td>Navegación, jerarquía visual y coherencia</td><td>Seis pestañas que siguen el orden de la narrativa</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Ocho indicadores mínimos</td><td>Atenciones, pacientes únicos, espera, hospitalización, reingreso, costo, satisfacción y estancia</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Definición matemática</td><td>Numerador, denominador, filtros y faltantes de cada indicador, en la pestaña Modelo y definiciones y en el documento</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Filtros obligatorios</td><td>Periodo, hospital, servicio, diagnóstico y triage</td><td class="ok">Cumplido</td></tr>
+      <tr><td>Demostrar que los filtros funcionan</td><td>Comprobación en vivo: la suma por hospital, por servicio y por triage siempre da el total</td><td class="ok">Cumplido</td></tr>
+    </table></div>
+  </section>
+
+  <section class="block">
+    <h2>Restricciones del enunciado</h2>
+    <ul class="plain">
+      <li>Cada gráfico tiene una conclusión escrita, no solo valores.</li>
+      <li>Las conclusiones explican qué significan los indicadores, no los repiten.</li>
+      <li>Cada recomendación sale de un hallazgo y tiene su indicador.</li>
+      <li>Ninguna relación se presenta como causal: se dice qué demuestra el análisis, qué no y qué dato haría falta.</li>
+      <li>El modelo justifica su granularidad y sus cardinalidades.</li>
+    </ul>
+  </section>
+</div>
+
+<footer class="foot"><div class="wrap">
+  <div class="team">
+    <div><b>Manuel Cardenas</b><br>2251663</div>
+    <div><b>Santiago Saavedra</b><br>2251936</div>
+    <div><b>Santiago Cortes</b><br>2251513</div>
+  </div>
+  <div>Datos sintéticos entregados por el docente · <a href="enunciado.pdf">Enunciado del proyecto</a></div>
+</div></footer>
+</body>
+</html>

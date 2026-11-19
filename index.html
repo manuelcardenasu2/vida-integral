@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Red Hospitalaria Vida Integral · Del dato a la decisión</title>
+<meta name="description" content="Modelo de datos, tablero interactivo y narrativa para la junta directiva de la Red Hospitalaria Vida Integral.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="index.html">Vida <span>Integral</span></a>
+  <div class="links">
+    <a class="on" href="index.html">Inicio</a>
+    <a href="tablero.html">Tablero</a>
+    <a href="presentacion.html">Presentación</a>
+    <a href="documento_tecnico.pdf">Documento</a>
+    <a href="decisiones.html">Decisiones</a>
+    <a href="cumplimiento.html">Cumplimiento</a>
+    <a href="figuras.html">Figuras</a>
+    <a href="anexos.html">Anexos</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <p class="eyebrow">Proyecto integrador · Visualización y Representación de Datos</p>
+  <h1>La red no está empeorando. Está atendiendo tarde a quien no puede esperar.</h1>
+  <p class="lead">Modelo de datos, tablero interactivo y narrativa para la junta directiva de la Red Hospitalaria Vida Integral, construidos a partir de 6.000 atenciones en seis hospitales de Santander, entre enero de 2025 y octubre de 2026.</p>
+  <div class="btns">
+    <a class="btn primary" href="tablero.html">Abrir el tablero</a>
+    <a class="btn ghost" href="presentacion.html">Ver la presentación</a>
+    <a class="btn ghost" href="documento_tecnico.pdf">Leer el documento técnico (PDF)</a>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="kpis">
+    <div class="kpi"><div class="n">6.000</div><div class="l">atenciones analizadas</div></div>
+    <div class="kpi"><div class="n">2.930</div><div class="l">pacientes distintos</div></div>
+    <div class="kpi"><div class="n hot">21,4 %</div><div class="l">de los triage II atendidos en 30 minutos, cuando la norma pide el 100 %</div></div>
+    <div class="kpi"><div class="n hot">+9,7 min</div><div class="l">de espera de más en el Hospital Regional, con la misma gravedad y servicio</div></div>
+  </div>
+
+  <section class="block">
+    <h2>Los tres entregables</h2>
+    <p class="sub">El enunciado pide un modelo de datos, un tablero interactivo y una narrativa sustentada en evidencia. Cada tarjeta lleva a su entregable.</p>
+    <div class="grid3">
+      <div class="card">
+        <span class="tag">Fase 1 · 20 %</span>
+        <h3>Modelo de datos</h3>
+        <p>Modelo estrella con una tabla de atenciones y ocho dimensiones: granularidad, llaves, cardinalidades, limpieza documentada y los dos retos del enunciado resueltos con cifras.</p>
+        <div class="go"><a href="documento_tecnico.pdf">Documento, Fase 1</a><a href="datos/modelo_vida_integral.xlsx">Modelo en Excel</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Fase 2 · 25 %</span>
+        <h3>Tablero interactivo</h3>
+        <p>Seis pestañas con los 8 indicadores, filtros por periodo, hospital, servicio, diagnóstico y triage, y una comprobación en vivo de que las partes suman el total.</p>
+        <div class="go"><a href="tablero.html">Abrir el tablero</a></div>
+      </div>
+      <div class="card">
+        <span class="tag">Fase 3 · 55 %</span>
+        <h3>Narrativa de datos</h3>
+        <p>Los ocho momentos del enunciado: contexto, pregunta, evidencia, seis hallazgos, conexiones, interpretación, cuatro decisiones con su indicador y el cierre.</p>
+        <div class="go"><a href="presentacion.html">Presentación</a><a href="documento_tecnico.pdf">Documento, Fase 3</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Lo que encontramos</h2>
+    <p class="sub">Seis hallazgos, tres de ellos contraintuitivos. El detalle y las decisiones están en la página de decisiones.</p>
+    <div class="grid3">
+      <div class="card"><span class="tag">Contraintuitivo</span><h3>No hay deterioro</h3><p>Espera, satisfacción, hospitalización y reingreso están planos durante 22 meses. El problema es estable, no una crisis.</p></div>
+      <div class="card"><span class="tag">Norma</span><h3>Triage I y II por fuera</h3><p>Mediana de 34,5 minutos en triage I, que exige atención inmediata. En el Hospital Regional solo 9 de cada 100 triage II entran a tiempo.</p></div>
+      <div class="card"><span class="tag">Hospitales</span><h3>Dos hospitales más lentos</h3><p>Regional y Oriente esperan 7 a 10 minutos más que lo esperado para el mismo triage y servicio, en los cinco niveles.</p></div>
+      <div class="card"><span class="tag">Contraintuitivo</span><h3>Los menos graves, más insatisfechos</h3><p>Porque son los que más esperan. Con más de 120 minutos, el 26,8 % califica 3 o menos; con 60 o menos, el 1,2 %.</p></div>
+      <div class="card"><span class="tag">Contraintuitivo</span><h3>El costo no es del hospital</h3><p>El hospital explica el 0,05 % de la variación del costo. El servicio y los días de estancia explican el 96,9 %.</p></div>
+      <div class="card"><span class="tag">Reingresos</span><h3>Concentrados en crónicos</h3><p>El 69,7 % de los reingresos viene del 35,7 % de las atenciones. En crónicos de 60 años o más reingresa el 22,1 %.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>Más material</h2>
+    <div class="grid4">
+      <a class="card" href="decisiones.html"><span class="tag">Junta</span><h3>Hallazgos y decisiones</h3><p>Cuatro acciones con línea base y meta.</p></a>
+      <a class="card" href="cumplimiento.html"><span class="tag">Enunciado</span><h3>Cumplimiento</h3><p>Cada requisito del enunciado y dónde está su evidencia.</p></a>
+      <a class="card" href="figuras.html"><span class="tag">Evidencia</span><h3>Figuras</h3><p>Las 12 gráficas del análisis en alta resolución.</p></a>
+      <a class="card" href="anexos.html"><span class="tag">Reproducibilidad</span><h3>Anexos</h3><p>Datos originales, modelo limpio, scripts y bitácora.</p></a>
+    </div>
+  </section>
+</div>
+
+<footer class="foot"><div class="wrap">
+  <div class="team">
+    <div><b>Manuel Cardenas</b><br>2251663</div>
+    <div><b>Santiago Saavedra</b><br>2251936</div>
+    <div><b>Santiago Cortes</b><br>2251513</div>
+  </div>
+  <div>Datos sintéticos entregados por el docente · <a href="enunciado.pdf">Enunciado del proyecto</a></div>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Figuras · Red Hospitalaria Vida Integral</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="index.html">Vida <span>Integral</span></a>
+  <div class="links">
+    <a href="index.html">Inicio</a>
+    <a href="tablero.html">Tablero</a>
+    <a href="presentacion.html">Presentación</a>
+    <a href="documento_tecnico.pdf">Documento</a>
+    <a href="decisiones.html">Decisiones</a>
+    <a href="cumplimiento.html">Cumplimiento</a>
+    <a class="on" href="figuras.html">Figuras</a>
+    <a href="anexos.html">Anexos</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Evidencia</p>
+    <h1>Figuras del análisis</h1>
+    <p class="lead">Las 12 gráficas generadas por analisis.py a partir de las 6.000 atenciones. Haga clic en una figura para verla en tamaño completo.</p>
+  </div>
+
+  <section class="block">
+    <div class="figs">
+      <figure class="fig"><a href="fig/f1_tendencia.png"><img loading="lazy" src="fig/f1_tendencia.png" alt="Espera, satisfacción, hospitalización y reingreso mensuales durante 22 meses"></a><figcaption><b>Estabilidad en 22 meses.</b> Ningún indicador tiene una tendencia mensual significativa.</figcaption></figure>
+      <figure class="fig"><a href="fig/f7_hospitales_resultados.png"><img loading="lazy" src="fig/f7_hospitales_resultados.png" alt="Estancia, costo, hospitalización y reingreso por hospital"></a><figcaption><b>Resultados por hospital.</b> Estancia, costo, hospitalización y reingreso no difieren (p de 0,12 a 0,86).</figcaption></figure>
+      <figure class="fig"><a href="fig/f2_triage_norma.png"><img loading="lazy" src="fig/f2_triage_norma.png" alt="Espera por nivel de triage contra la norma"></a><figcaption><b>Triage contra la norma.</b> Los niveles I y II arrancan por encima de lo que exige la Resolución 5596.</figcaption></figure>
+      <figure class="fig"><a href="fig/f3b_t2_meta_hospital.png"><img loading="lazy" src="fig/f3b_t2_meta_hospital.png" alt="Porcentaje de triage II atendido en 30 minutos por hospital"></a><figcaption><b>Triage II a tiempo por hospital.</b> De 30,4 % en Clínica del Norte a 9 % en el Hospital Regional.</figcaption></figure>
+      <figure class="fig"><a href="fig/f3_exceso_espera.png"><img loading="lazy" src="fig/f3_exceso_espera.png" alt="Exceso de espera ajustado por triage y servicio"></a><figcaption><b>Exceso de espera ajustado.</b> Regional +9,7 y Oriente +6,8 minutos con el mismo triage y servicio.</figcaption></figure>
+      <figure class="fig"><a href="fig/f3c_heatmap.png"><img loading="lazy" src="fig/f3c_heatmap.png" alt="Espera promedio por hospital y nivel de triage"></a><figcaption><b>Hospital por triage.</b> La brecha se repite en los cinco niveles.</figcaption></figure>
+      <figure class="fig"><a href="fig/f4_espera_satisfaccion.png"><img loading="lazy" src="fig/f4_espera_satisfaccion.png" alt="Satisfacción por rango de espera y nivel de triage"></a><figcaption><b>Espera y satisfacción.</b> La calificación cae con los minutos en los cinco niveles de triage (asociación, no causa).</figcaption></figure>
+      <figure class="fig"><a href="fig/f5_sat_hospital_ajustada.png"><img loading="lazy" src="fig/f5_sat_hospital_ajustada.png" alt="Satisfacción observada y ajustada por espera por hospital"></a><figcaption><b>Satisfacción sin la espera.</b> Al descontar la espera, los seis hospitales califican igual.</figcaption></figure>
+      <figure class="fig"><a href="fig/f6_costo_r2.png"><img loading="lazy" src="fig/f6_costo_r2.png" alt="Porcentaje de la variación del costo explicada por cada factor"></a><figcaption><b>Qué explica el costo.</b> El hospital, 0,05 %; servicio y estancia, 96,9 %.</figcaption></figure>
+      <figure class="fig"><a href="fig/f10_estancia_cronico.png"><img loading="lazy" src="fig/f10_estancia_cronico.png" alt="Estancia de diagnósticos agudos y crónicos por servicio"></a><figcaption><b>Estancia de los crónicos.</b> 1,29 días más con el mismo servicio y triage.</figcaption></figure>
+      <figure class="fig"><a href="fig/f8_reingreso_cronico_edad.png"><img loading="lazy" src="fig/f8_reingreso_cronico_edad.png" alt="Tasa de reingreso según tipo de diagnóstico y edad"></a><figcaption><b>Reingreso por perfil.</b> 22,1 % en crónicos de 60 años o más, 2,8 % en no crónicos menores de 60.</figcaption></figure>
+      <figure class="fig"><a href="fig/f9_reingreso_diagnostico.png"><img loading="lazy" src="fig/f9_reingreso_diagnostico.png" alt="Tasa de reingreso por diagnóstico"></a><figcaption><b>Reingreso por diagnóstico.</b> Los cuatro crónicos encabezan la lista.</figcaption></figure>
+    </div>
+  </section>
+</div>
+
+<footer class="foot"><div class="wrap">
+  <div class="team">
+    <div><b>Manuel Cardenas</b><br>2251663</div>
+    <div><b>Santiago Saavedra</b><br>2251936</div>
+    <div><b>Santiago Cortes</b><br>2251513</div>
+  </div>
+  <div>Datos sintéticos entregados por el docente · <a href="enunciado.pdf">Enunciado del proyecto</a></div>
+</div></footer>
+</body>
+</html>

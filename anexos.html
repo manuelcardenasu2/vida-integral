@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anexos · Red Hospitalaria Vida Integral</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="index.html">Vida <span>Integral</span></a>
+  <div class="links">
+    <a href="index.html">Inicio</a>
+    <a href="tablero.html">Tablero</a>
+    <a href="presentacion.html">Presentación</a>
+    <a href="documento_tecnico.pdf">Documento</a>
+    <a href="decisiones.html">Decisiones</a>
+    <a href="cumplimiento.html">Cumplimiento</a>
+    <a href="figuras.html">Figuras</a>
+    <a class="on" href="anexos.html">Anexos</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Reproducibilidad</p>
+    <h1>Anexos</h1>
+    <p class="lead">Los datos de entrada, el modelo limpio y los programas que generan todas las cifras del proyecto. Con estos archivos cualquiera puede repetir el análisis y obtener los mismos resultados.</p>
+  </div>
+
+  <section class="block">
+    <h2>Entregables principales</h2>
+    <div class="tablewrap"><table>
+      <tr><th>Archivo</th><th>Contenido</th></tr>
+      <tr><td><a href="documento_tecnico.pdf">documento_tecnico.pdf</a></td><td>Documento técnico: modelo de datos, definición de indicadores, narrativa en ocho momentos, recomendaciones y limitaciones</td></tr>
+      <tr><td><a href="tablero.html">tablero.html</a></td><td>Tablero interactivo. También funciona descargado, sin internet</td></tr>
+      <tr><td><a href="presentacion.pdf">presentacion.pdf</a> · <a href="presentacion.pptx">presentacion.pptx</a></td><td>Presentación de la sustentación (18 diapositivas)</td></tr>
+    </table></div>
+  </section>
+
+  <section class="block">
+    <h2>Datos</h2>
+    <div class="tablewrap"><table>
+      <tr><th>Archivo</th><th>Contenido</th></tr>
+      <tr><td><a href="datos/Hospital_360_dataset_6000reg.xlsx">Hospital_360_dataset_6000reg.xlsx</a></td><td>Dataset original entregado por el docente: 9 hojas (hecho, 6 dimensiones, diccionario y LEEME)</td></tr>
+      <tr><td><a href="datos/Hospital_360_fact_atenciones_6000.csv">Hospital_360_fact_atenciones_6000.csv</a></td><td>Tabla principal original en CSV</td></tr>
+      <tr><td><a href="datos/modelo_vida_integral.xlsx">modelo_vida_integral.xlsx</a></td><td>Modelo físico limpio: hecho, 8 dimensiones, bitácora de transformaciones y calidad de datos</td></tr>
+      <tr><td><a href="datos/fact_atenciones_limpia.csv">fact_atenciones_limpia.csv</a></td><td>Tabla de hechos limpia en CSV (la misma de la hoja fact_atenciones del modelo)</td></tr>
+    </table></div>
+  </section>
+
+  <section class="block">
+    <h2>Programas y resultados</h2>
+    <div class="tablewrap"><table>
+      <tr><th>Archivo</th><th>Qué hace</th><th>Qué produce</th></tr>
+      <tr><td><a href="scripts/etl.py">etl.py</a></td><td>Revisa llaves, duplicados, faltantes y consistencia; homologa formatos y construye el modelo</td><td><a href="datos/modelo_vida_integral.xlsx">modelo</a>, <a href="datos/etl_log.json">etl_log.json</a></td></tr>
+      <tr><td><a href="scripts/retos.py">retos.py</a></td><td>Calcula los dos retos de la Fase 1: pacientes únicos y uniones incorrectas</td><td><a href="datos/retos.json">retos.json</a></td></tr>
+      <tr><td><a href="scripts/analisis.py">analisis.py</a></td><td>Pruebas estadísticas y figuras de la narrativa</td><td><a href="datos/analisis.json">analisis.json</a>, <a href="figuras.html">figuras</a></td></tr>
+      <tr><td><a href="scripts/run_pipeline.sh">run_pipeline.sh</a></td><td>Corre los tres programas en orden</td><td>Carpeta salida/</td></tr>
+      <tr><td><a href="scripts/medidas_dax.txt">medidas_dax.txt</a></td><td>Fórmulas de los indicadores para reproducir el tablero en Power BI</td><td></td></tr>
+    </table></div>
+    <p class="note" style="margin-top:14px">Requisitos: Python 3 con pandas, numpy, scipy, matplotlib y openpyxl. Pruebas usadas: Kruskal-Wallis, ji cuadrado, Mann-Whitney, correlación de Spearman y regresión lineal, con nivel de significancia de 0,05.</p>
+  </section>
+
+  <section class="block">
+    <h2>Fuentes</h2>
+    <ul class="plain">
+      <li>Ministerio de Salud y Protección Social. <a href="https://minsalud.gov.co/salud/prestacion-servicios/Paginas/triage.aspx">Triage, Resolución 5596 de 2015</a>.</li>
+      <li>Secretaría Distrital de Salud de Bogotá. <a href="https://normograma.com/keralty/compilacion/docs/C_SSALUDBOG_0005_2025.htm">Circular 05 de 2025</a>.</li>
+      <li><a href="enunciado.pdf">Enunciado del proyecto integrador</a>.</li>
+    </ul>
+  </section>
+</div>
+
+<footer class="foot"><div class="wrap">
+  <div class="team">
+    <div><b>Manuel Cardenas</b><br>2251663</div>
+    <div><b>Santiago Saavedra</b><br>2251936</div>
+    <div><b>Santiago Cortes</b><br>2251513</div>
+  </div>
+  <div>Datos sintéticos entregados por el docente · <a href="enunciado.pdf">Enunciado del proyecto</a></div>
+</div></footer>
+</body>
+</html>

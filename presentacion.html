@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Presentación · Red Hospitalaria Vida Integral</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+<style>
+.viewer { background: var(--navy); border-radius: 14px; padding: 14px; margin-top: 22px; }
+.stage { position: relative; aspect-ratio: 16 / 9; background: #0e1a2b; border-radius: 8px; overflow: hidden; }
+.stage img { width: 100%; height: 100%; object-fit: contain; }
+.arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; border: none; background: rgba(20,36,58,.72); color: #fff; font-size: 24px; cursor: pointer; }
+.arrow:hover { background: rgba(20,36,58,.95); }
+.arrow.prev { left: 12px; } .arrow.next { right: 12px; }
+.bar { display: flex; align-items: center; gap: 12px; color: #C3CDD9; font-size: 14px; padding: 12px 4px 4px; flex-wrap: wrap; }
+.bar .count { font-weight: 600; color: #F6F3EC; }
+.bar .title { flex: 1; min-width: 200px; }
+.bar button { font: inherit; font-weight: 600; background: var(--navy2); color: #F6F3EC; border: 1px solid #2D4566; border-radius: 6px; padding: 7px 12px; cursor: pointer; }
+.thumbs { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+.thumbs button { padding: 0; border: 2px solid transparent; border-radius: 6px; background: none; cursor: pointer; overflow: hidden; position: relative; }
+.thumbs button.on { border-color: var(--accent); }
+.thumbs button span { position: absolute; left: 6px; top: 4px; font-size: 11px; font-weight: 700; color: #fff; background: rgba(20,36,58,.8); padding: 1px 6px; border-radius: 4px; }
+.viewer:fullscreen { display: flex; flex-direction: column; justify-content: center; border-radius: 0; }
+@media (max-width: 900px) { .thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+</style>
+</head>
+<body>
+<nav class="nav"><div class="nav-in">
+  <a class="brand" href="index.html">Vida <span>Integral</span></a>
+  <div class="links">
+    <a href="index.html">Inicio</a>
+    <a href="tablero.html">Tablero</a>
+    <a class="on" href="presentacion.html">Presentación</a>
+    <a href="documento_tecnico.pdf">Documento</a>
+    <a href="decisiones.html">Decisiones</a>
+    <a href="cumplimiento.html">Cumplimiento</a>
+    <a href="figuras.html">Figuras</a>
+    <a href="anexos.html">Anexos</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+  <div class="page-head">
+    <p class="eyebrow">Fase 3 · Narrativa de datos</p>
+    <h1>Presentación ante la junta directiva</h1>
+    <p class="lead">Dieciocho diapositivas organizadas en los ocho momentos del enunciado. Use las flechas del teclado o los botones para avanzar.</p>
+  </div>
+  <div class="btns" style="margin-top:18px">
+    <a class="btn light" href="presentacion.pdf">Descargar en PDF</a>
+    <a class="btn light" href="presentacion.pptx">Descargar en PowerPoint</a>
+  </div>
+
+  <div class="viewer" id="viewer">
+    <div class="stage">
+      <img id="slide" src="diapositivas/diapositiva_01.jpg" alt="Diapositiva 1">
+      <button class="arrow prev" id="prev" aria-label="Diapositiva anterior">‹</button>
+      <button class="arrow next" id="next" aria-label="Diapositiva siguiente">›</button>
+    </div>
+    <div class="bar">
+      <span class="count" id="count">1 / 18</span>
+      <span class="title" id="title"></span>
+      <button id="full">Pantalla completa</button>
+    </div>
+  </div>
+  <div class="thumbs" id="thumbs"></div>
+</div>
+
+<footer class="foot"><div class="wrap">
+  <div class="team">
+    <div><b>Manuel Cardenas</b><br>2251663</div>
+    <div><b>Santiago Saavedra</b><br>2251936</div>
+    <div><b>Santiago Cortes</b><br>2251513</div>
+  </div>
+  <div>Datos sintéticos entregados por el docente · <a href="enunciado.pdf">Enunciado del proyecto</a></div>
+</div></footer>
+
+<script>
+const T = ["Portada", "Momento 1 · El contexto", "Momento 2 · El problema", "Momento 3 · De dónde salen los datos",
+  "Momento 3 · Estabilidad en 22 meses", "Momento 3 · Diferencias entre hospitales", "Momento 4 · Triage contra la norma",
+  "Momento 4 · Triage II por hospital", "Momento 4 · Exceso de espera ajustado", "Hallazgo contraintuitivo · Satisfacción",
+  "Hallazgo contraintuitivo · Costos", "Momento 4 · Reingresos", "Momento 5 · La conexión", "Momento 6 · La interpretación",
+  "Momento 7 · Cuatro decisiones", "Momento 7 · Indicadores de seguimiento", "Limitaciones", "Momento 8 · El cierre"];
+const N = T.length, src = i => "diapositivas/diapositiva_" + String(i + 1).padStart(2, "0") + ".jpg";
+let i = 0;
+const img = document.getElementById("slide"), thumbs = document.getElementById("thumbs");
+T.forEach((t, k) => { const b = document.createElement("button"); b.innerHTML = '<span>' + (k + 1) + '</span><img loading="lazy" src="' + src(k) + '" alt="Diapositiva ' + (k + 1) + ': ' + t + '">'; b.onclick = () => go(k); thumbs.appendChild(b); });
+function go(k) {
+  i = Math.max(0, Math.min(N - 1, k));
+  img.src = src(i); img.alt = "Diapositiva " + (i + 1) + ": " + T[i];
+  document.getElementById("count").textContent = (i + 1) + " / " + N;
+  document.getElementById("title").textContent = T[i];
+  [...thumbs.children].forEach((b, k2) => b.classList.toggle("on", k2 === i));
+  if (location.hash !== "#" + (i + 1)) history.replaceState(null, "", "#" + (i + 1));
+  if (i + 1 < N) new Image().src = src(i + 1);
+}
+document.getElementById("prev").onclick = () => go(i - 1);
+document.getElementById("next").onclick = () => go(i + 1);
+document.addEventListener("keydown", e => { if (e.key === "ArrowRight" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); go(i + 1); } if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); go(i - 1); } });
+document.getElementById("full").onclick = () => { const v = document.getElementById("viewer"); if (document.fullscreenElement) document.exitFullscreen(); else if (v.requestFullscreen) v.requestFullscreen(); };
+const h = parseInt(location.hash.slice(1), 10); go(isNaN(h) ? 0 : h - 1);
+</script>
+</body>
+</html>
