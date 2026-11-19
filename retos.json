@@ -1,0 +1,65 @@
+{
+ "atenciones": 6000,
+ "pacientes_unicos_red": 2930,
+ "pacientes_en_dim": 3600,
+ "atenciones_por_paciente": 2.05,
+ "dist_atenciones_por_paciente": {
+  "1": 1141,
+  "2": 919,
+  "3": 554,
+  "4": 235,
+  "5": 68,
+  "6": 12,
+  "7": 1
+ },
+ "suma_unicos_por_hospital": 5229,
+ "pacientes_en_mas_de_un_hospital": 1600,
+ "tasa_reingreso_atenciones": 8.15,
+ "pacientes_con_algun_reingreso": 459,
+ "tasa_reingreso_pacientes": 15.67,
+ "edad_prom_atenciones": 42.26,
+ "edad_prom_pacientes": 42.4,
+ "pct_60_atenciones": 21.58,
+ "pct_60_pacientes": 21.33,
+ "base_correcta": {
+  "filas": 6000,
+  "costo_total": 5803785000.0,
+  "hospitalizaciones": 1476,
+  "reingresos": 489
+ },
+ "error_A_grupo_diagnostico": {
+  "filas": 7234,
+  "costo_total": 7151824000.0,
+  "hospitalizaciones": 1893,
+  "reingresos": 682,
+  "inflacion_costo_pct": 23.2,
+  "explicacion": "Relacionar por grupo_diagnostico en vez de diagnostico_id. El grupo Cardiovascular agrupa Hipertensión y Enfermedad cardiovascular, así que cada atención de ese grupo se repite dos veces."
+ },
+ "error_A_detalle": {
+  "atenciones_cardiovasculares": 1234
+ },
+ "error_B_regimen": {
+  "filas": 11513,
+  "costo_total": 11121129000.0,
+  "hospitalizaciones": 2831,
+  "reingresos": 938,
+  "inflacion_costo_pct": 91.6,
+  "explicacion": "Relacionar pacientes y aseguradoras por régimen. Contributivo y Subsidiado tienen dos EPS cada uno, así que cada atención de esos regímenes se duplica."
+ },
+ "error_C_zona_clasificacion": {
+  "filas": 20094,
+  "costo_total": 19397186000.0,
+  "hospitalizaciones": 4886,
+  "reingresos": 1634,
+  "inflacion_costo_pct": 234.2,
+  "explicacion": "Unir el municipio del paciente con los hospitales por la zona (Urbana o Intermedia) para 'asignar' hospital por zona. Hay 4 hospitales urbanos y 2 intermedios, así que cada atención se repite 2 o 4 veces y las de Lebrija (rural) desaparecen."
+ },
+ "error_D_hecho_con_hecho": {
+  "filas": 15744,
+  "costo_total": 15338722000.0,
+  "hospitalizaciones": 3852,
+  "reingresos": 1268,
+  "inflacion_costo_pct": 164.3,
+  "explicacion": "Unir fact_atenciones consigo misma por paciente_id (relación muchos a muchos) para contar visitas. Un paciente con 5 atenciones aparece 25 veces."
+ }
+}
